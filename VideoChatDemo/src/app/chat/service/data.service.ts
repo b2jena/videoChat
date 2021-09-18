@@ -4,7 +4,8 @@ import {webSocket, WebSocketSubject} from 'rxjs/webSocket';
 import {environment} from '../../../environments/environment';
 import {Message} from '../types/message';
 
-export const WS_ENDPOINT = environment.wsEndpoint;   // wsEndpoint: 'ws://localhost:8081'
+export const WS_ENDPOINT = environment.wsEndpoint;  
+// we can also use this -> wsEndpoint: 'ws://localhost:8081'
 
 @Injectable({
   providedIn: 'root'

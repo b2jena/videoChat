@@ -36,7 +36,7 @@ export class ChatComponent implements AfterViewInit {
   inCall = false;
   localVideoActive = false;
 
-
+  //b2jena
   constructor(private dataService: DataService) { }
 
   async call(): Promise<void> {
