@@ -1,8 +1,6 @@
-# YouTube WebRTC Tutorial
+# Video Chat
 
-Here you can find the related source code to my YouTube tutorial:
-
-**Creating a web video call client with WebRTC and Angular** - https://youtu.be/SWhG0VRdiW8
+**Creating a web video call client with WebRTC and Angular**
 
 ## Description
 All configuration is done within environment.ts and environment.prod.ts
@@ -52,7 +50,3 @@ CA-file=/path/to/a/CA.crt
 Please note, that you should set up user credentials. Some WebRTC implementations might have problems, if a TURN server does not need credentials. So make sure, you set up some user.
 
 It's also required to setup a valid certificate and private key for TLS encryption.
-
-## Questions
-
-If you need further support, please contact me on http://openvalue.de/
