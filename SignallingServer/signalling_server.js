@@ -12,6 +12,9 @@
 
 // Resources that can help : https://spring.io/guides/gs/messaging-stomp-websocket/
 // https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+
+
+// while running this server, if you get a message like " Error: Cannot find module 'ws' " or module not found, then write this command on the terminal : npm install webrtc-signaling-server
 const WebSocket = require('ws');
 const wss = new WebSocket.Server({ port: 8081 }, () => {
     console.log("Signalling server is now listening on port 8081");
