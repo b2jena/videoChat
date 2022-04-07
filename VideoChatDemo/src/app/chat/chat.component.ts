@@ -1,13 +1,13 @@
-import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
-import {environment} from '../../environments/environment';
-import {DataService} from './service/data.service';
-import {Message} from './types/message';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { environment } from '../../environments/environment';
+import { DataService } from './service/data.service';
+import { Message } from './types/message';
 
 export const ENV_RTCPeerConfiguration = environment.RTCPeerConfiguration;
 
 const mediaConstraints = {
   audio: true,
-  video: {width: 1280, height: 720}
+  video: { width: 1280, height: 720 }
   // video: {width: 1280, height: 720} // 16:9
   // video: {width: 960, height: 540}  // 16:9
   // video: {width: 640, height: 480}  //  4:3
@@ -54,14 +54,14 @@ export class ChatComponent implements AfterViewInit {
 
       this.inCall = true;
 
-      this.dataService.sendMessage({type: 'offer', data: offer});
+      this.dataService.sendMessage({ type: 'offer', data: offer });
     } catch (err) {
       this.handleGetUserMediaError(err);
     }
   }
 
   hangUp(): void {
-    this.dataService.sendMessage({type: 'hangup', data: ''});
+    this.dataService.sendMessage({ type: 'hangup', data: '' });
     this.closeVideoCall();
   }
 
@@ -123,22 +123,22 @@ export class ChatComponent implements AfterViewInit {
 
       }).then(() => {
 
-      // Build SDP for answer message
-      return this.peerConnection.createAnswer();
+        // Build SDP for answer message
+        return this.peerConnection.createAnswer();
 
-    }).then((answer) => {
+      }).then((answer) => {
 
-      // Set local SDP
-      return this.peerConnection.setLocalDescription(answer);
+        // Set local SDP
+        return this.peerConnection.setLocalDescription(answer);
 
-    }).then(() => {
+      }).then(() => {
 
-      // Send local SDP to remote party
-      this.dataService.sendMessage({type: 'answer', data: this.peerConnection.localDescription});
+        // Send local SDP to remote party
+        this.dataService.sendMessage({ type: 'answer', data: this.peerConnection.localDescription });
 
-      this.inCall = true;
+        this.inCall = true;
 
-    }).catch(this.handleGetUserMediaError);
+      }).catch(this.handleGetUserMediaError);
   }
 
   private handleAnswerMessage(msg: RTCSessionDescriptionInit): void {

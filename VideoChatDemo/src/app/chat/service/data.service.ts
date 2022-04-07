@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import {Subject} from 'rxjs';
-import {webSocket, WebSocketSubject} from 'rxjs/webSocket';
-import {environment} from '../../../environments/environment';
-import {Message} from '../types/message';
+import { Subject } from 'rxjs';
+import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
+import { environment } from '../../../environments/environment';
+import { Message } from '../types/message';
 
-export const WS_ENDPOINT = environment.wsEndpoint;  
+export const WS_ENDPOINT = environment.wsEndpoint;
 // we can also use this -> wsEndpoint: 'ws://localhost:8081'
 
 @Injectable({
